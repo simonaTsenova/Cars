@@ -195,3 +195,5 @@ D:\TelerikAcademy\ASP .NET MVC\CarsTask\Cars\Cars.Web\bin\WebActivatorEx.dll
 D:\TelerikAcademy\ASP .NET MVC\CarsTask\Cars\Cars.Web\bin\Ninject.xml
 D:\TelerikAcademy\ASP .NET MVC\CarsTask\Cars\Cars.Web\bin\Ninject.Web.Common.xml
 D:\TelerikAcademy\ASP .NET MVC\CarsTask\Cars\Cars.Web\bin\Ninject.Web.Mvc.xml
+D:\TelerikAcademy\ASP .NET MVC\CarsTask\Cars\Cars.Web\bin\Cars.Services.dll
+D:\TelerikAcademy\ASP .NET MVC\CarsTask\Cars\Cars.Web\bin\Cars.Services.pdb

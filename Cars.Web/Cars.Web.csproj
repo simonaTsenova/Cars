@@ -217,6 +217,10 @@
       <Project>{B07734E0-DA71-44CE-8862-699591554AAB}</Project>
       <Name>Cars.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cars.Services\Cars.Services.csproj">
+      <Project>{4D0798BA-D35B-4CDD-85F3-8E0F54E43CFC}</Project>
+      <Name>Cars.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

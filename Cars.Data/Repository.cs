@@ -27,11 +27,6 @@ namespace Cars.Data
             }
         }
 
-        public T GetById(object id)
-        {
-            return this.dbContext.DbSet<T>().Find(id);
-        }
-
         public void Add(T entity)
         {
             this.dbContext.Add(entity);

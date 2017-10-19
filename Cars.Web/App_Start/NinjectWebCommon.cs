@@ -12,6 +12,8 @@ namespace Cars.Web.App_Start
     using Ninject.Web.Common;
     using Cars.Data.Contracts;
     using Cars.Data;
+    using Cars.Services.Contracts;
+    using Cars.Services;
 
     public static class NinjectWebCommon 
     {
@@ -63,6 +65,8 @@ namespace Cars.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ICarService>().To<CarService>().InRequestScope();
+
             kernel.Bind<ICarsDbContext>().To<CarsDbContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
