@@ -8,25 +8,23 @@
     <div class="col-md-12">
         <h2>Search cars: </h2>
 
-        @using (@Ajax.BeginForm("Search", new AjaxOptions
-        {
-            HttpMethod = "POST",
-            UpdateTargetId = "search-results",
-            InsertionMode = InsertionMode.Replace
-        }))
-        {
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
+        <div class="input-group">
+            @using (@Ajax.BeginForm("Search", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                UpdateTargetId = "search-results",
+                InsertionMode = InsertionMode.Replace
+            }))
+            {
+                <div class="form-group">
                     @Html.TextBoxFor(m => m.OwnerId, new { @class = "form-control input-lg", placeholder = "Enter owner ID..." })
-
-                    <span class="input-group-btn">
-                        <button type="submit" value="Search" class="btn btn-primary btn-lg" id="search">Search</button>
-                    </span>
+                    <br />
+                    @Html.ValidationMessageFor(m => m.OwnerId, null, new { @class = "text-danger" })
                 </div>
-            </div>
-            @Html.ValidationMessageFor(m => m.OwnerId, null, new { @class = "text-danger" })
-        }
 
+                <button type="submit" value="Search" class="btn btn-primary" id="search">Search</button>
+            }
+        </div>
     </div>
 </div>
 
