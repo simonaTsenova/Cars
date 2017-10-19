@@ -36,10 +36,10 @@ namespace Cars.Web.Controllers
         [HttpPost]
         public ActionResult Search(SearchViewModel model)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    this.RedirectToAction("Default");
-            //}
+            if (!ModelState.IsValid)
+            {
+                return this.Content("The Id field is required");
+            }
 
             var cars = this.carService
                 .GetByOwnerId(model.OwnerId);
