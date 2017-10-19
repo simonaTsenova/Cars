@@ -1,0 +1,11 @@
+﻿@model Cars.Web.Models.CarViewModel
+
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">@Model.Description</h4>
+        <p class="card-text">Car model: @Model.CarModel.Description</p>
+        <p class="card-text">Owner: @Model.Owner.FirstName @Model.Owner.LastName </p>
+    </div>
+</div>
+<hr />
+

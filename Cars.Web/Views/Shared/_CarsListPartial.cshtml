@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Cars.Web.Models.CarViewModel>
+
+<h2>Results:</h2>
+
+@foreach(var car in Model)
+{
+    Html.RenderPartial("_CarPartial", car);
+}

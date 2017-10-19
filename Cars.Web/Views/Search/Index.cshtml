@@ -1,0 +1,23 @@
+﻿@model Cars.Web.Models.SearchViewModel
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="row">
+    @using (@Ajax.BeginForm("Search", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "search-results",
+        InsertionMode = InsertionMode.Replace
+    }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.TextBoxFor(m => m.OwnerId)
+
+        <input type="submit" value="Search" class="btn btn-primary" id="search" />
+    }
+</div>
+
+<div class="row" id="search-results">
+</div>

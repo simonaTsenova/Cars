@@ -10,10 +10,13 @@ namespace Cars.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Ninject.Extensions.Factory;
+
     using Cars.Data.Contracts;
     using Cars.Data;
     using Cars.Services.Contracts;
     using Cars.Services;
+    using Cars.Web.Factories;
 
     public static class NinjectWebCommon 
     {
@@ -65,6 +68,8 @@ namespace Cars.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ICarViewModelFactory>().ToFactory().InSingletonScope();
+
             kernel.Bind<ICarService>().To<CarService>().InRequestScope();
 
             kernel.Bind<ICarsDbContext>().To<CarsDbContext>().InRequestScope();
