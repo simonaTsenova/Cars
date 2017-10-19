@@ -1,8 +1,16 @@
 ﻿@model IEnumerable<Cars.Web.Models.CarViewModel>
 
-<h2>Results:</h2>
+<h2><u>Results:</u></h2>
 
-@foreach(var car in Model)
+@if (Model.Any())
 {
-    Html.RenderPartial("_CarPartial", car);
+   foreach (var car in Model)
+   {
+       Html.RenderPartial("_CarPartial", car);
+   }
 }
+else
+{
+    <p>This owner has no cars</p>
+}
+

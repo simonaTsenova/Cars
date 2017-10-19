@@ -5,18 +5,30 @@
 }
 
 <div class="row">
-    @using (@Ajax.BeginForm("Search", new AjaxOptions
-    {
-        HttpMethod = "POST",
-        UpdateTargetId = "search-results",
-        InsertionMode = InsertionMode.Replace
-    }))
-    {
-        @Html.AntiForgeryToken()
-        @Html.TextBoxFor(m => m.OwnerId)
+    <div class="col-md-12">
+        <h2>Search cars: </h2>
 
-        <input type="submit" value="Search" class="btn btn-primary" id="search" />
-    }
+        @using (@Ajax.BeginForm("Search", new AjaxOptions
+        {
+            HttpMethod = "POST",
+            UpdateTargetId = "search-results",
+            InsertionMode = InsertionMode.Replace
+        }))
+        {
+
+            @Html.AntiForgeryToken()
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    @Html.TextBoxFor(m => m.OwnerId, new { @class = "form-control input-lg", placeholder = "Enter owner ID..." })
+
+                    <span class="input-group-btn">
+                        <button type="submit" value="Search" class="btn btn-primary btn-lg" id="search">Search</button>
+                    </span>
+                </div>
+            </div>
+        }
+
+    </div>
 </div>
 
 <div class="row" id="search-results">
