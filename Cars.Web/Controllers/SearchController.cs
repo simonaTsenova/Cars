@@ -35,7 +35,7 @@ namespace Cars.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public PartialViewResult Search(SearchViewModel model)
+        public ActionResult Search(SearchViewModel model)
         {
             var cars = this.carService
                 .GetByOwnerId(model.OwnerId);

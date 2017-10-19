@@ -4,6 +4,10 @@ namespace Cars.Web.Models
 {
     public class CarViewModel
     {
+        public CarViewModel()
+        {
+        }
+
         public CarViewModel(Car car)
         {
             this.Owner = car.Owner;
