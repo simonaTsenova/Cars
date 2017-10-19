@@ -51,9 +51,9 @@
     <Compile Include="Contracts\ICarsDbContext.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201710191317230_Initial.cs" />
-    <Compile Include="Migrations\201710191317230_Initial.Designer.cs">
-      <DependentUpon>201710191317230_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201710191928343_Initial.cs" />
+    <Compile Include="Migrations\201710191928343_Initial.Designer.cs">
+      <DependentUpon>201710191928343_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710191317230_Initial.resx">
-      <DependentUpon>201710191317230_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710191928343_Initial.resx">
+      <DependentUpon>201710191928343_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

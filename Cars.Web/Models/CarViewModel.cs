@@ -11,7 +11,7 @@ namespace Cars.Web.Models
         public CarViewModel(Car car)
         {
             this.Owner = car.Owner;
-            this.CarModel = car.CarModel;
+            this.CarModel = car.Model;
             this.Description = car.Description;
         }
 

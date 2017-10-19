@@ -10,7 +10,7 @@
         {
             this.Description = description;
             this.Owner = owner;
-            this.CarModel = carModel;
+            this.Model = carModel;
         }
 
         public int ID { get; set; }
@@ -21,7 +21,7 @@
 
         public int ModelId { get; set; }
 
-        public virtual CarModel CarModel { get; set; }
+        public virtual CarModel Model { get; set; }
 
         public string Description { get; set; }
     }

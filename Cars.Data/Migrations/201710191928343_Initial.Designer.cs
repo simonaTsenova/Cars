@@ -13,7 +13,7 @@ namespace Cars.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710191317230_Initial"; }
+            get { return "201710191928343_Initial"; }
         }
         
         string IMigrationMetadata.Source

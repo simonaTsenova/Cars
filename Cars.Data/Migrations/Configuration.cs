@@ -17,13 +17,16 @@ namespace Cars.Data.Migrations
         protected override void Seed(CarsDbContext context)
         {
             this.SeedOwners(context);
+            context.SaveChanges();
             this.SeedCarModels(context);
+            context.SaveChanges();
             this.SeedCars(context);
+            context.SaveChanges();
         }
 
         private void SeedOwners(CarsDbContext context)
         {
-            if(!context.Owners.Any())
+            if (!context.Owners.Any())
             {
                 var owners = new Owner[]
                 {

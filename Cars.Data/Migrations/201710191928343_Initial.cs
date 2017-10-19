@@ -24,13 +24,12 @@ namespace Cars.Data.Migrations
                         OwnerId = c.Int(nullable: false),
                         ModelId = c.Int(nullable: false),
                         Description = c.String(),
-                        CarModel_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.CarModels", t => t.CarModel_ID)
+                .ForeignKey("dbo.CarModels", t => t.ModelId, cascadeDelete: true)
                 .ForeignKey("dbo.Owners", t => t.OwnerId, cascadeDelete: true)
                 .Index(t => t.OwnerId)
-                .Index(t => t.CarModel_ID);
+                .Index(t => t.ModelId);
             
             CreateTable(
                 "dbo.Owners",
@@ -47,8 +46,8 @@ namespace Cars.Data.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Cars", "OwnerId", "dbo.Owners");
-            DropForeignKey("dbo.Cars", "CarModel_ID", "dbo.CarModels");
-            DropIndex("dbo.Cars", new[] { "CarModel_ID" });
+            DropForeignKey("dbo.Cars", "ModelId", "dbo.CarModels");
+            DropIndex("dbo.Cars", new[] { "ModelId" });
             DropIndex("dbo.Cars", new[] { "OwnerId" });
             DropTable("dbo.Owners");
             DropTable("dbo.Cars");
