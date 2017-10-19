@@ -15,8 +15,6 @@
             InsertionMode = InsertionMode.Replace
         }))
         {
-
-            @Html.AntiForgeryToken()
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
                     @Html.TextBoxFor(m => m.OwnerId, new { @class = "form-control input-lg", placeholder = "Enter owner ID..." })
@@ -26,6 +24,7 @@
                     </span>
                 </div>
             </div>
+            @Html.ValidationMessageFor(m => m.OwnerId, null, new { @class = "text-danger" })
         }
 
     </div>
@@ -33,3 +32,7 @@
 
 <div class="row" id="search-results">
 </div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

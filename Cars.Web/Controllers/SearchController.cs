@@ -34,9 +34,13 @@ namespace Cars.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Search(SearchViewModel model)
         {
+            //if (!ModelState.IsValid)
+            //{
+            //    this.RedirectToAction("Default");
+            //}
+
             var cars = this.carService
                 .GetByOwnerId(model.OwnerId);
 
