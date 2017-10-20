@@ -15,7 +15,20 @@ namespace Cars.Web.Tests.SearchControllerTests
     public class Search_Should
     {
         [Test]
-        public void CallCarServiceGetByOwnerId_WhenInvoked()
+        public void ReturnCorrectContent_WhenModelIsInvalid()
+        {
+            var carServiceMock = new Mock<ICarService>();
+            var factoryMock = new Mock<ICarViewModelFactory>();
+            var controller = new SearchController(carServiceMock.Object, factoryMock.Object);
+            controller.ModelState.AddModelError("field", "message");
+            var searchViewModel = new SearchViewModel();
+
+            controller.WithCallTo(c => c.Search(searchViewModel))
+                .ShouldReturnContent("The Id field is required");
+        }
+
+        [Test]
+        public void CallCarServiceGetByOwnerId_WhenModelIsValid()
         {
             var id = 1;
 
@@ -35,7 +48,7 @@ namespace Cars.Web.Tests.SearchControllerTests
         }
 
         [Test]
-        public void RenderPartialViewWithCorrectModel_WhenInvoked()
+        public void RenderPartialViewWithCorrectModel_WhenModelIsValid()
         {
             var id = 1;
 
