@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    font-family: Verdana, sans-serif;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,45 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#search-results {
+    margin-top: 2%;
+    padding-left: 4%;
+}
+
+#results-title {
+    text-decoration: underline;
+    padding-bottom: 2%;
+}
+
+.navbar-inverse {
+    background-color: #4eb980;
+    border-color: #4eb980;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.btn-primary {
+    background-color: #323232;
+    border-color: #323232;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-color: #808080;
+    border-color: #808080;
+}
+
+footer {
+    background-color: #323232;
+}
+
+footer p {
+    color: white;
 }

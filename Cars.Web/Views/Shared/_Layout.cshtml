@@ -22,10 +22,11 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-        </footer>
     </div>
+    <footer class="navbar-fixed-bottom">
+        <hr />
+        <p class="text-center">@DateTime.Now.Year | MVC5 ASP .NET Application</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
